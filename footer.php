@@ -34,6 +34,13 @@
 
 		</div> <!-- end .off-canvas-wrapper -->
 
+    <script type="text/javascript">
+    window.addEventListener('scroll', () => {
+      document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+      console.log(window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+    }, false);
+    </script>     
+
 		<?php wp_footer(); ?>
 
 	</body>

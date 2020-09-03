@@ -209,6 +209,11 @@ HEADER
 	}
 }
 
+.menu .active > a,
+.menu .is-active > a {
+	background: none; 
+}
+
 /*********************
 BLOG STYLES
 *********************/
