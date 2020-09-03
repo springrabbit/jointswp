@@ -32,14 +32,16 @@ Springrabbit/JointsWP is distributed under the terms of the GNU GPL
 ## Changelog
 
 ### 1.0
-* Released: December 6, 2016
+* Released: September 2, 2020
 
 Initial release
 
 ## Screenshoots
 
-https://user-images.githubusercontent.com/8530916/92098767-50ab0b00-ede2-11ea-87f6-4d97b56c527f.jpg
-https://user-images.githubusercontent.com/8530916/92098768-5143a180-ede2-11ea-94fc-6d6fc7e30944.jpg
-https://user-images.githubusercontent.com/8530916/92098776-53a5fb80-ede2-11ea-8488-d72c3746dba0.jpg
-https://user-images.githubusercontent.com/8530916/92098779-56085580-ede2-11ea-965c-df39560bf409.jpg
-https://user-images.githubusercontent.com/8530916/92098786-59034600-ede2-11ea-8de5-0da64066f2b2.jpg
+Try this markdown:
+
+![screeshoot 1](https://user-images.githubusercontent.com/8530916/92098767-50ab0b00-ede2-11ea-87f6-4d97b56c527f.jpg)
+![screeshoot 2](https://user-images.githubusercontent.com/8530916/92098768-5143a180-ede2-11ea-94fc-6d6fc7e30944.jpg)
+![screeshoot 3](https://user-images.githubusercontent.com/8530916/92098776-53a5fb80-ede2-11ea-8488-d72c3746dba0.jpg)
+![screeshoot 4](https://user-images.githubusercontent.com/8530916/92098779-56085580-ede2-11ea-965c-df39560bf409.jpg)
+![screeshoot 5](https://user-images.githubusercontent.com/8530916/92098786-59034600-ede2-11ea-8de5-0da64066f2b2.jpg)
