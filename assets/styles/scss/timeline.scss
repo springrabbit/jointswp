@@ -1,0 +1,121 @@
+// BASE
+@import 'timeline/base/normalize';
+@import 'timeline/base/vars';
+@import 'timeline/base/selection-colors';
+@import 'timeline/base/body-element';
+
+// LAYOUTS
+@import 'timeline/layouts/grid';
+
+
+// MODULES
+@import 'timeline/modules/device-notification';
+@import 'timeline/modules/section';
+@import 'timeline/modules/header';
+@import 'timeline/modules/side-nav';
+@import 'timeline/modules/intro';
+@import 'timeline/modules/work';
+@import 'timeline/modules/about';
+@import 'timeline/modules/contact';
+@import 'timeline/modules/hire';
+@import 'timeline/modules/outer-nav';
+
+body {
+  background-color: map-get($foundation-palette, 'primary');
+}
+
+.header--logo {
+  h1 {
+    font-size: 1rem;
+  }
+}
+
+.header--logo:hover {
+  color: $white;
+}
+
+.intro--banner {
+  img {
+    max-width: 500px;
+    height: auto;
+  }
+}
+
+.intro--options {
+
+  a {
+    color: $white;
+  }
+
+  a:hover,
+  a:focus {
+    color: map-get($foundation-palette, 'secondary');
+  }
+
+  font-size: $small-font-size;
+
+}
+
+.about--options {
+
+  a:first-child {
+    background-image: url("../images/undraw_detailed_information_3sp6.png")
+  }
+
+  a:nth-child(2) {
+    background-image: url("../images/undraw_personal_goals_edgd.png")
+  }
+
+  a:nth-child(3) {
+    background-image: url("../images/undraw_pie_graph_x9dy.png")
+  }
+
+}
+
+.about--banner {
+
+  img {
+    max-width: 500px;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
+
+.yeti-slider--item-description {
+  font-size: $small-font-size;
+}
+
+.yeti-slider--item-title {
+  color: map-get($foundation-palette, 'secondary');
+}
+
+.yeti-slider--item-center {
+  .yeti-slider--item-title {
+    color: $white;
+  }
+}
+
+.contact {
+  background-image: url('../images/undraw_Map_light_3hjy.svg');
+  background-size: auto;
+
+  .modal--information {
+    font-weight: 300;
+    font-size: $small-font-size;
+  }
+}
+
+.contact--lockup .modal--options a {
+  background-color: map-get($foundation-palette, 'secondary');
+}
+
+.work-request--information input[type="text"],
+.work-request--information input[type="email"],
+.work-request--information input[type="text"]:focus,
+.work-request--information input[type="email"]:focus {
+  border: none;
+  border-bottom: 1px solid $white;
+  box-shadow: none;
+}

@@ -1,0 +1,773 @@
+/************************************************
+
+Stylesheet: Global Stylesheet
+
+*************************************************/
+
+/*********************
+BASE ELEMENTS
+*********************/
+
+label {
+	font-size: 1rem;
+}
+
+.button {
+	transition: all 0.5s linear;
+}
+
+.button:hover,
+.button:focus {
+	background-color: map-get($foundation-palette, 'primary');
+}
+
+.tags {
+	margin-left: 15px;
+}
+
+.tags > a {
+	padding: 3px 5px;
+	background-color: $light-gray;
+	margin-right: 15px;
+	position: relative;
+	height: 20px;
+	font-size: $small-font-size;
+	display: inline-block;
+	line-height: 10px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	color: $dark-gray;
+}
+
+.tags > a::before {
+	content: '';
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid $light-gray;
+	position: absolute;
+	top: 0;
+	transform: translateX(-15px);
+}
+
+.tags > a::after {
+	content: '';
+	width: 5px;
+	height: 5px;
+	display: block;
+	border-radius: 50%;
+	background-color: $white;
+	position: absolute;
+	left: -3px;
+	top: 8px;
+}
+
+// Post meta
+.byline {
+	color: #999;
+	font-size: $small-font-size;
+	time {}
+}
+
+.byline a {
+	color: $dark-gray;
+}
+
+.byline-top {
+	color: $dark-gray;
+	font-size: $small-font-size;
+	margin-top: 0.5rem;
+
+	a {
+		color: $dark-gray;
+	}
+}
+
+/*********************
+SITE CONTENT
+*********************/
+
+.content {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.main {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.inner-content {
+	width: 100%;
+}
+
+.content-starts {
+	margin: 2rem auto 0;
+	width: 100%;
+	max-width: 1440px;
+	padding: 0 4rem;
+}
+
+@media (max-width: map-get($breakpoints, 'medium')) {
+	.content-starts {
+		padding: 0 2rem;
+	}
+}
+
+#site-bottom {
+	background: $light-gray;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.bottom-section {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	font-size: $small-font-size;
+}
+
+@media (max-width: map-get($breakpoints, 'narrow')) {
+	.bottom-section {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+/*********************
+HEADER
+*********************/
+
+.menu-icon::after {
+	background: $dark-gray;
+	box-shadow: 0 10px 0 $dark-gray, 0 20px 0 $dark-gray;
+}
+
+.menu-icon:hover::after {
+	background: $black !important;
+	box-shadow: 0 10px 0 $black, 0 20px 0 $black !important;
+}
+
+.menu-icon {
+	width: 30px !important;
+	height: 20px !important;
+}
+
+#top-bar-menu {
+	background: none;
+	background-color: none;
+	display: flex;
+	grid-gap: 1.5rem;
+	align-items: center;
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 10px 4rem;
+	flex-wrap: nowrap;
+	border-bottom: 1px solid $light-gray;
+
+	.custom-logo {
+		max-height: 70px;
+		width: auto;
+		margin-right: 10px;
+	}
+
+	a {
+		color: $black;
+	}
+
+	h1 {
+		font-size: 1.2rem;
+		line-height: 1;
+		margin: 0;
+	}
+
+	.top-bar-left {
+		display: flex;
+		grid-gap: 1.5rem;
+		align-items: center;
+		flex-shrink: 1;
+	}
+
+	.top-bar-right {
+		a {
+			color: $dark-gray;
+		}
+
+		a:hover {
+			color: $black;
+		}
+	}
+}
+
+#top-bar-menu ul {
+	background: none;
+	background-color: none;
+}
+
+@media (max-width: map-get($breakpoints, 'medium')) {
+	#top-bar-menu {
+		padding: 10px 2rem;
+	}
+}
+
+/*********************
+BLOG STYLES
+*********************/
+
+.blog-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+
+	.blog-grid-item {
+		.article-header {
+			margin-bottom: 1rem;
+
+			a {
+				color: map-get($foundation-palette, 'secondary');
+			}
+
+			h3 {
+				line-height: 1.2;
+				font-weight: 400;
+				font-size: 1.2rem;
+				margin: 0.5rem 0;
+			}
+		}
+
+		.entry-content {
+			font-size: $small-font-size;
+		}
+
+		.article-footer {
+			margin-top: 1rem;
+		}
+	}
+}
+
+@media (max-width: map-get($breakpoints, 'medium')) {
+	.blog-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: map-get($breakpoints, 'narrow')) {
+	.blog-grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.page-header {
+	margin-bottom: 2rem;
+	position: relative;
+
+	p {
+		font-size: $small-font-size;
+	}
+}
+
+.page-title {
+	text-transform: capitalize;
+	font-size: 1.2rem;
+	line-height: 1;
+
+	// Remove Foundation vcard styling from author page titles
+	.vcard {
+		border: 0px;
+		padding: 0px;
+	}
+}
+
+.content-not-found {
+	text-align: center;
+
+	h1 {
+		font-size: 1.2rem;
+	}
+}
+
+.content-article,
+.content-page {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.article-header {
+	.entry-title {
+		font-size: 1.2rem;
+	}
+
+	margin-bottom: 2rem;
+}
+
+// Entry content
+.entry-content {
+
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.alignleft, img.alignleft {
+		margin-right: 1.5em;
+		display: inline;
+		float: left;
+	}
+	.alignright, img.alignright {
+		margin-left: 1.5em;
+		display: inline;
+		float: right;
+	}
+	.aligncenter, img.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		clear: both;
+	}
+
+	video, object {
+		max-width: 100%;
+		height: auto;
+		}
+
+	pre {
+		background: #eee;
+		border: 1px solid #cecece;
+		padding: 10px;
+		}
+
+}
+
+.main.single-post {
+	width: 100%;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 2.5rem;
+	grid-template-columns: 1fr 600px 300px 1fr;
+	grid-template-areas:
+		"header header header header"
+		". content sidebar .";
+}
+
+.article-header {
+	grid-area: header;
+}
+
+.content-article {
+	grid-area: content;
+}
+
+@media (max-width: 1024px) {
+	.main.single-post {
+		grid-template-columns: 1rem 1fr 1rem;
+		grid-template-areas:
+			"header header header"
+			". content ."
+			". sidebar .";
+	}
+}
+
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
+
+	// Images inside wp-caption
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+}
+
+.article-footer {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+// Add Foundation styling to password protect button
+.post-password-form input[type="submit"] {
+	@include button;
+}
+
+/*********************
+IMAGE GALLERY STYLES
+*********************/
+.gallery {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+.gallery::before, .gallery::after {
+	content: ' ';
+	display: table;
+}
+.gallery::after {
+	clear: both;
+}
+.gallery.gallery-columns-1 > dl {
+	@include grid-column;
+}
+.gallery.gallery-columns-2 > dl {
+	@include grid-column(1 of 2);
+}
+.gallery.gallery-columns-3 > dl {
+	@include grid-column(1 of 3);
+}
+.gallery.gallery-columns-4 > dl {
+	@include grid-column(1 of 4);
+}
+.gallery.gallery-columns-5 > dl {
+	@include grid-column(1 of 5);
+}
+.gallery.gallery-columns-6 > dl {
+	@include grid-column(1 of 6);
+}
+.gallery.gallery-columns-7 > dl {
+	@include grid-column(1 of 7);
+}
+.gallery.gallery-columns-8 > dl {
+	@include grid-column(1 of 8);
+}
+.gallery dl {
+	width: 100%;
+	float: left;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+}
+.gallery dl:last-child:not(:first-child) {
+  float: right;
+ }
+
+// Gallery caption styles
+.gallery-caption {}
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+/*********************
+PAGE NAVI STYLES
+*********************/
+.page-navigation {
+	margin-top: 1rem;
+}
+
+/*********************
+COMMENT STYLES
+*********************/
+#comments {
+	.commentlist {
+		margin-left: 0px;
+	}
+}
+
+#respond {
+	ul {
+		margin-left: 0px;
+	}
+}
+
+.commentlist {
+	li {
+		position: relative;
+		clear: both;
+		overflow: hidden;
+		list-style-type: none;
+		margin-bottom: 1.5em;
+		padding: 0.7335em 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		ul.children {
+			margin: 0;
+
+			li {}
+
+			.comment {}
+			.alt {}
+			.odd {}
+			.even {}
+			.depth-1 {}           // Change number for different depth
+			.byuser {}
+			.bypostauthor {}
+			.comment-author-admin {}
+
+		}
+	}
+
+	li[class*=depth-] {
+		margin-top: 1.1em;
+	}
+
+	li.depth-1 {
+		margin-left: 0;
+		margin-top: 0;
+	}
+
+	li:not(.depth-1) {
+		margin-left: 10px;
+		margin-top: 0;
+		padding-bottom: 0;
+	}
+
+	li.depth-2 {}
+	li.depth-3 {
+	}
+	li.depth-4 {}
+	li.depth-5 {}
+
+	// General comment classes
+	.alt {}
+	.odd {
+	}
+	.even {
+	}
+	.parent {}
+	.comment {}
+	.children {}
+	.pingback {}
+	.bypostauthor {}
+	.comment-author {}
+	.comment-author-admin {}
+	.thread-alt {}
+	.thread-odd {}
+	.thread-even {}
+
+	// vcard
+	.vcard {
+		margin-left: 50px;
+
+		cite.fn {
+			font-weight: 700;
+			font-style: normal;
+
+			a.url {}
+
+		}
+
+		time {
+			float: right;
+
+			a {
+				color: #999;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+
+		}
+
+		img.photo {}
+
+		img.avatar {
+			position: absolute;
+			left: 10px;
+			padding: 2px;
+			border: 1px solid #cecece;
+			background: #fff;
+		}
+
+	} // end .commentlist .vcard
+
+
+	// comment meta
+	.comment-meta {
+
+		a {}
+
+	}
+
+	.commentmetadata {
+
+		a {}
+
+	}
+
+	// comment content
+	.comment_content {
+
+		p {
+			margin: 0.7335em 0 1.5em;
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+
+	} // end .commentlist .comment_content
+
+	// comment reply link
+	.comment-reply-link {
+		float: right;
+
+		&:hover,
+		&:focus {
+
+		}
+
+	} // end .commentlist .comment-reply-link
+
+} // end .commentlist
+
+/*********************
+COMMENT FORM STYLES
+*********************/
+.respond-form {
+	margin: 1.5em 10px;
+	padding-bottom: 2.2em;
+
+	form {
+		margin: 0.75em 0;
+
+		li {
+			list-style-type: none;
+			clear: both;
+			margin-bottom: 0.7335em;
+
+			label,
+			small {
+				display: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		textarea {
+			padding: 3px 6px;
+			background: #efefef;
+			border: 2px solid #cecece;
+			line-height: 1.5em;
+
+			&:focus {
+				background: #fff;
+			}
+
+			// form validation
+			&:invalid {
+				outline: none;
+				border-color: #fbc2c4;
+				background-color: #f6e7eb;
+				-webkit-box-shadow: none;
+				   -moz-box-shadow: none;
+				    -ms-box-shadow: none;
+						box-shadow: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url] {
+			max-width: 400px;
+			min-width: 250px;
+		}
+
+		textarea {
+			resize: none;
+			width: 97.3%;
+			height: 150px;
+		}
+
+	}
+}
+
+// comment form title
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
+
+// cancel comment reply link
+#cancel-comment-reply {
+	a {}
+}
+
+// logged in comments
+.comments-logged-in-as {}
+
+// allowed tags
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
+
+// No comments
+.nocomments {
+	margin: 0 20px 1.1em;
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+	li{
+		list-style: none;
+	}
+}
+
+.widget {
+	ul {
+		margin: 0;
+	}
+}
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+	clear: both;
+	background: $black;
+	color: $white;
+	padding: 4rem 0;
+
+	.copyright {
+		text-align: center;
+		font-size: $small-font-size;
+	}
+}
+
+/*********************
+VISUAL EDITOR STYLES
+*********************/
+// Makes content look better in visual editor
+body#tinymce {
+   	margin: 20px;
+}
+
+/*********************
+PLUGIN STYLES
+*********************/
+// Makes Gravity Forms play nice with Foundation Form styles
+.gform_body ul {
+    list-style: none outside none;
+    margin: 0;
+}
+
+// Hide Gravity Forms validation fields when GFCSS is disabled
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+    display: none !important;
+    position: absolute !important;
+    left: -9000px;
+}
